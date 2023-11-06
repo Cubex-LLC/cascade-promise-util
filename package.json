@@ -1,0 +1,40 @@
+{
+  "name": "cascade-promise-util",
+  "version": "0.0.1",
+  "description": "A Promise utility",
+  "author": "Sean Johnson <sjohnson@sjohnsonaz.com>",
+  "contributors": [],
+  "homepage": "https://sjohnsonaz.github.io/cascade",
+  "license": "MIT",
+  "main": "dist/indexjs",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "rimraf ./dist && tsc --declaration",
+    "clean": "rimraf ./dist",
+    "test": "jest",
+    "dev-local": "tsc --declaration --watch",
+    "mkdocs": "mkdocs build",
+    "mkdocs-serve": "mkdocs serve",
+    "mkdocs-deploy": "mkdocs gh-deploy",
+    "typedoc": "typedoc --out ./docs/apidocs/ ./src/",
+    "open": "opn src/mocha/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zill4/cascade-promise-util.git"
+  },
+  "bugs": {},
+  "devDependencies": {
+    "@types/jest": "^29.5.5",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.1",
+    "ts-jest": "^29.1.1",
+    "typedoc": "^0.25.1",
+    "typescript": "^5.2.2"
+  },
+  "keywords": [
+    "cascade",
+    "promise"
+  ]
+}
