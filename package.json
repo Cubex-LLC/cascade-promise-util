@@ -9,7 +9,7 @@
   "main": "dist/indexjs",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --declaration",
     "prepublishOnly": "rimraf ./dist && tsc --declaration",
     "clean": "rimraf ./dist",
     "test": "jest",

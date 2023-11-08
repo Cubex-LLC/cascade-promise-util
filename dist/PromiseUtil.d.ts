@@ -1,0 +1,17 @@
+export declare function wait(time: number): Promise<void>;
+export declare function waitAnimation(time?: number): Promise<unknown>;
+export declare function retry(time: number, callback: () => Promise<boolean>): Promise<void>;
+type ExtendedFunction0<T> = (...args: any[]) => T;
+type ExtendedFunction1<T, U> = (arg0: T) => U;
+type ExtendedFunction2<T, U, V> = (arg0: T, arg1: U) => V;
+type ExtendedFunction3<T, U, V, W> = (arg0: T, arg1: U, arg2: V) => W;
+type ExtendedFunction4<T, U, V, W, X> = (arg0: T, arg1: U, arg2: V, arg3: W) => X;
+export declare function debounce<T>(func: ExtendedFunction0<T>, wait: number, immediate?: boolean): () => void;
+export declare function debounce<T, U>(func: ExtendedFunction1<T, U>, wait: number, immediate?: boolean): (arg0: T) => void;
+export declare function debounce<T, U, V>(func: ExtendedFunction2<T, U, V>, wait: number, immediate?: boolean): (arg0: T, arg1: U) => void;
+export declare function debounce<T, U, V, W>(func: ExtendedFunction3<T, U, V, W>, wait: number, immediate?: boolean): (arg0: T, arg1: U, arg2: V) => void;
+export declare function debounce<T, U, V, W, X>(func: ExtendedFunction4<T, U, V, W, X>, wait: number, immediate?: boolean): (arg0: T, arg1: U, arg2: V, arg3: W) => void;
+type CleanPromise<T> = T extends Promise<infer U> ? Promise<U> : Promise<T>;
+type PrmoiseFunction<T extends (...args: any) => any> = (...args: Parameters<T>) => CleanPromise<ReturnType<T>>;
+export declare function debouncePromise<T extends (...args: any) => any>(func: T, wait: number, thisArg?: any): PrmoiseFunction<T>;
+export {};
